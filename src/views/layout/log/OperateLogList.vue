@@ -4,12 +4,12 @@
       <el-form-item label="操作人">
         <el-input placeholder="请输入用户名"></el-input>
       </el-form-item>
-      <el-form-item label="登录类型">
+      <el-form-item label="操作类型">
         <el-select clearable v-model="value" placeholder="请选择登录类型">
           <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"> </el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="登录时间范围">
+      <el-form-item label="操作时间范围">
         <div class="block">
           <el-date-picker
             type="datetimerange"
@@ -33,12 +33,12 @@
       :cell-style="{ padding: '4px 4px' }"
       stripe
     >
-      <el-table-column prop="userName" label="操作人" width="160" align="center"></el-table-column>
-      <el-table-column prop="orgName" label="单位名称" width="200" align="center"></el-table-column>
-      <el-table-column prop="ip" label="IP" width="160" align="center"></el-table-column>
-      <el-table-column prop="loginType" label="登入或登出" width="160" align="center"></el-table-column>
-      <el-table-column prop="status" label="操作结果" width="160" align="center"></el-table-column>
-      <el-table-column prop="loginTime" label="操作时间" align="center"></el-table-column>
+      <el-table-column prop="str1" label="操作模块" width="200" align="center"></el-table-column>
+      <el-table-column prop="str2" label="操作对象" width="160" align="center"></el-table-column>
+      <el-table-column prop="str3" label="操作类型" width="160" align="center"></el-table-column>
+      <el-table-column prop="str4" label="操作人" width="160" align="center"></el-table-column>
+      <el-table-column prop="str5" label="操作结果" width="160" align="center"></el-table-column>
+      <el-table-column prop="str6" label="操作时间" align="center"></el-table-column>
     </el-table>
     <el-pagination
       background
@@ -86,12 +86,12 @@ export default {
       for (let i = 0; i < 5; i++) {
         let obj = {
           "id|+1": 1,
-          userName: Random.string("lower", 8),
-          orgName: Random.pick(["财务部", "商务部", "客服", "总裁办公室"]),
-          ip: "192." + Random.integer(1, 254) + "." + Random.integer(1, 254) + "." + Random.integer(1, 254),
-          loginType: Random.pick(["登入", "登出"]),
-          loginTime: Random.datetime("yyyy-MM-dd HH:mm:ss"),
-          status: Random.pick(["成功", "失败"])
+          str1: Random.pick(["资源", "模板", "数据源", "用户权限", "工单"]),
+          str2: Random.string("lower", 8),
+          str3: Random.pick(["UNKNOWN", "SEARCH", "CREATE", "UPDATE", "DELETE"]),
+          str4: Random.string("lower", 8),
+          str5: Random.pick(["成功", "失败"]),
+          str6: Random.datetime("yyyy-MM-dd HH:mm:ss")
         };
         list.push(obj);
       }

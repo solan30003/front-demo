@@ -1,6 +1,6 @@
 <template>
   <el-container class="main-layout">
-    <header></header>
+    <front-header></front-header>
     <app-main ref="mainTable" />
     <el-footer class="footer">FRONT DEMO 2020</el-footer>
   </el-container>
@@ -8,7 +8,7 @@
 <script>
 import { AppMain } from "./components";
 
-import header from "./components/header";
+import frontHeader from "./components/front-header";
 
 export default {
   name: "Layout",
@@ -17,7 +17,7 @@ export default {
   },
   components: {
     AppMain,
-    header
+    frontHeader
   },
   computed: {},
   watch: {

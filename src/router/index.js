@@ -23,11 +23,20 @@ export const constantRouterMap = [
       },
       {
         path: "loginLogList",
-        component: () => import("@/views/layout/log/loginLogList"),
+        component: () => import("@/views/layout/log/LoginLogList"),
         name: "loginLogList",
         meta: {
-          title: "日志列表",
+          title: "登录日志",
           icon: "loginLogList"
+        }
+      },
+      {
+        path: "operateLogList",
+        component: () => import("@/views/layout/log/OperateLogList"),
+        name: "operateLogList",
+        meta: {
+          title: "操作日志",
+          icon: "operateLogList"
         }
       },
       {

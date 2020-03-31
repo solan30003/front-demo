@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <gis-map></gis-map>
-  </div>
+  <div></div>
 </template>
 
 <script>

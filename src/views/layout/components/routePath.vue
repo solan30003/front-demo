@@ -2,39 +2,19 @@
   <div class="route-path">
     <el-popover ref="popoverPath" placement="bottom" trigger="click" popper-class="enc-path" @show="show">
       <el-menu
-        default-active="prePlanTmplList"
+        default-active="loginLogList"
         class="el-menu-vertical-demo"
         router
         @open="handleOpen"
         @close="handleClose"
       >
-        <el-menu-item index="caseStart">
+        <!-- <el-menu-item index="loginLogList">
           <i class="el-icon-thumb"></i>
-          <span slot="title">启动预案</span>
-        </el-menu-item>
-        <el-menu-item index="prePlanTmplList">
-          <i class="el-icon-menu"></i>
-          <span slot="title">预案模板</span>
-        </el-menu-item>
-        <!-- <el-menu-item index="plansManage">
-          <i class="el-icon-menu"></i>
-          <span slot="title">预案模板管理</span>
+          <span slot="title">登录日志</span>
         </el-menu-item> -->
-        <!-- <el-menu-item index="caseExecute">
-          <i class="el-icon-menu"></i>
-          <span slot="title">预案执行</span>
-        </el-menu-item> -->
-        <el-menu-item index="prePlanInstcList">
-          <i class="el-icon-office-building"></i>
-          <span slot="title">预案实例</span>
-        </el-menu-item>
-        <el-menu-item index="sysDictList">
-          <i class="el-icon-setting"></i>
-          <span slot="title">参数配置</span>
-        </el-menu-item>
-        <el-menu-item index="sysTest" v-if="false">
-          <i class="el-icon-menu"></i>
-          <span slot="title">测试页</span>
+        <el-menu-item :index="item.index" v-for="item in menuData" :key="item.index">
+          <i class="el-icon-thumb"></i>
+          <span slot="title">{{ item.title }}</span>
         </el-menu-item>
       </el-menu>
       <i
@@ -54,7 +34,11 @@ export default {
       isCollapse: true,
       activeName: "first",
       pathData: [],
-      collected: []
+      collected: [],
+      menuData: [
+        { index: "loginLogList", title: "登录日志" },
+        { index: "operateLogList", title: "操作日志" }
+      ]
     };
   },
   computed: {},
