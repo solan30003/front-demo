@@ -5,7 +5,7 @@ import router from "../router";
 
 // create an axios instance
 const service = axios.create({
-  baseURL: process.env.BASE_API, // api 的 base_url
+  baseURL: process.env.BASE_API // api 的 base_url
 });
 
 // request interceptor
@@ -18,9 +18,7 @@ service.interceptors.request.use(
     }
     if (store.getters.userInfo) {
       // 让每个请求携带User,用户系统获取的用户信息
-      config.headers["User"] = Buffer.from(
-        JSON.stringify(store.getters.userInfo)
-      ).toString("base64");
+      config.headers["User"] = Buffer.from(JSON.stringify(store.getters.userInfo)).toString("base64");
     }
     return config;
   },
@@ -78,12 +76,12 @@ service.interceptors.response.use(
           idCardNumber: "",
           departmentName: ""
         }
-      }
+      };
       localStorage.setItem("loginInfo", JSON.stringify(map));
       localStorage.setItem("token", "");
       store.commit("SET_TOKEN", "");
       store.commit("SET_TOKEN", "");
-      store.commit("SET_USERINFO","");
+      store.commit("SET_USERINFO", "");
       router.push("/login");
     }
     return Promise.reject(error);

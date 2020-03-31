@@ -11,15 +11,14 @@
 
 <script>
 export default {
-  name: 'AppMain',
-  computed: {
-  }
-}
+  name: "AppMain",
+  computed: {}
+};
 </script>
 
 <style lang="scss" scoped>
-  .app-main {
-    height: calc(100vh - 100px);
-    position: relative;
-  }
+.app-main {
+  height: calc(100vh - 100px);
+  position: relative;
+}
 </style>

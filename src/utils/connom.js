@@ -284,7 +284,7 @@ function inArray(elem, arr) {
   return arr == null ? false : arr.indexOf(elem) > -1;
 }
 // module.exports = {
-export const utils = {
+export const dommon = {
   isArray: isArray,
   isArrayBuffer: isArrayBuffer,
   isFormData: isFormData,

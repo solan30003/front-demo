@@ -1,17 +1,15 @@
 <template>
-  <el-header class="enc-header">
+  <el-header class="header">
     <div class="content">
       <div class="left">
         <div>
           <route-path></route-path>
         </div>
         <div>
-          <i
-            class="font_family icon-DigitalOS"
-          ></i>
+          <i class="font_family icon-DigitalOS"></i>
         </div>
         <div style="font-weight: 600; min-width: 180px; margin-left: 12px;">
-          <span>{{title}}</span>
+          <span>{{ title }}</span>
         </div>
       </div>
     </div>
@@ -26,18 +24,18 @@ export default {
   },
   data() {
     return {
-      //title: "预案系统",
+      // title: "front-demo",
       userName: "admin"
     };
   },
-  computed:{
-    title(){
+  computed: {
+    title() {
       return this.$route.meta.title;
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/enc-header.scss";
+@import "@/styles/header.scss";
 </style>

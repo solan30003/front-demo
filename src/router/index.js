@@ -8,11 +8,11 @@ export const constantRouterMap = [
   {
     path: "",
     component: Layout,
-    redirect: "prePlanTmplList",
+    redirect: "loginLogList",
     children: [
       {
         path: "portal",
-        component: () => import("@/views/portal/index"),
+        component: () => import("@/views/layout/index"),
         name: "portal",
         meta: {
           title: "首页",
@@ -22,74 +22,12 @@ export const constantRouterMap = [
         }
       },
       {
-        path: "plansManage",
-        component: () => import("@/views/portal/plan/tmpl/prePlanTmplManage"),
-        name: "plansManage",
+        path: "loginLogList",
+        component: () => import("@/views/layout/log/loginLogList"),
+        name: "loginLogList",
         meta: {
-          title: "预案模板管理",
-          icon: "plansManage"
-        }
-      },
-      {
-        path: "prePlanTmplList",
-        component: () => import("@/views/portal/plan/tmpl/prePlanTmplList"),
-        name: "prePlanTmplList",
-        meta: {
-          title: "预案模板",
-          icon: "prePlanTmplList"
-        }
-      },
-      {
-        path: "prePlanDetail",
-        component: () => import("@/views/portal/plan/tmpl/prePlanDetail"),
-        name: "prePlanDetail",
-        meta: {
-          title: "预案详情",
-          icon: "prePlanTmplList"
-        }
-      },
-      {
-        path: "caseStart",
-        component: () => import("@/views/portal/case/caseStart"),
-        name: "caseStart",
-        meta: {
-          title: "启动预案",
-          icon: "caseStart",
-          noCache: true,
-          requireAuth: true
-        }
-      },
-      {
-        path: "sysDictList",
-        component: () => import("@/views/portal/sys/sysDictList"),
-        name: "sysDictList",
-        meta: {
-          title: "参数配置",
-          icon: "sysDictList",
-          noCache: true,
-          requireAuth: true
-        }
-      },
-      {
-        path: "caseExecute",
-        component: () => import("@/views/portal/case/caseExecute"),
-        name: "caseExecute",
-        meta: {
-          title: "执行预案",
-          icon: "caseExecute",
-          noCache: true,
-          requireAuth: true
-        }
-      },
-      {
-        path: "prePlanInstcList",
-        component: () => import("@/views/portal/plan/instc/prePlanInstcList"),
-        name: "prePlanInstcList",
-        meta: {
-          title: "预案列表",
-          icon: "caseExecute",
-          noCache: true,
-          requireAuth: true
+          title: "日志列表",
+          icon: "loginLogList"
         }
       },
       {
@@ -97,7 +35,7 @@ export const constantRouterMap = [
         component: () => import("@/views/layout/components/404"),
         name: "404",
         meta: {
-          title: "预案系统",
+          title: "front-demo-404",
           icon: "error",
           noCache: true
         }
@@ -107,7 +45,7 @@ export const constantRouterMap = [
         component: () => import("@/views/layout/components/500"),
         name: "500",
         meta: {
-          title: "预案系统",
+          title: "front-demo-500",
           icon: "error",
           noCache: true
         }

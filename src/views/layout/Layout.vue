@@ -1,15 +1,14 @@
 <template>
   <el-container class="main-layout">
-    <enc-header></enc-header>
+    <header></header>
     <app-main ref="mainTable" />
-    <el-footer class="footer">版权所有 2020 新智认知数字科技股份有限公司</el-footer>
+    <el-footer class="footer">FRONT DEMO 2020</el-footer>
   </el-container>
 </template>
 <script>
 import { AppMain } from "./components";
 
-import encHeader from "./components/header";
-import { addUserLogoutLog, logout } from "@/api/api.js";
+import header from "./components/header";
 
 export default {
   name: "Layout",
@@ -18,45 +17,20 @@ export default {
   },
   components: {
     AppMain,
-    encHeader
+    header
   },
   computed: {},
   watch: {
     $route(value, old) {
+      console.log(value);
+      console.log(old);
       this.hideHeader = this.$route.name === "aiSearch";
     }
   },
   mounted() {
     this.hideHeader = this.$route.name === "aiSearch";
   },
-  methods: {
-    loginOut() {
-      const params = {
-        loginAccount: this.$store.getters.userInfo.userName
-      };
-      logout(params).then(res => {
-        if (res.data.data) {
-          const map = {
-            token: "",
-            userInfo: {
-              userId: "",
-              userName: "",
-              cnName: "",
-              idCardNumber: "",
-              departmentName: ""
-            }
-          };
-          localStorage.setItem("loginInfo", JSON.stringify(map));
-          localStorage.setItem("token", "");
-          this.$store.commit("SET_TOKEN", "");
-          this.$store.commit("SET_USERINFO", "");
-          this.$router.push("/login");
-        } else {
-          this.$message.error("退出失败");
-        }
-      });
-    }
-  }
+  methods: {}
 };
 </script>
 
@@ -78,8 +52,8 @@ export default {
   line-height: 33px;
   text-align: center;
 }
-.main-layout{
-  height:100%;
+.main-layout {
+  height: 100%;
 }
 .footer {
   background: #c0c4cc;
@@ -91,4 +65,3 @@ export default {
   z-index: 999999;
 }
 </style>
-

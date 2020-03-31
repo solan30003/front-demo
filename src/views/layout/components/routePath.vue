@@ -1,7 +1,13 @@
 <template>
   <div class="route-path">
     <el-popover ref="popoverPath" placement="bottom" trigger="click" popper-class="enc-path" @show="show">
-      <el-menu default-active="prePlanTmplList" class="el-menu-vertical-demo" router @open="handleOpen" @close="handleClose">
+      <el-menu
+        default-active="prePlanTmplList"
+        class="el-menu-vertical-demo"
+        router
+        @open="handleOpen"
+        @close="handleClose"
+      >
         <el-menu-item index="caseStart">
           <i class="el-icon-thumb"></i>
           <span slot="title">启动预案</span>
@@ -41,7 +47,7 @@
 </template>
 
 <script>
-import { getMenuList, getCollectedMenu, getMenuCollectionList, deleteCollectedMenu } from "@/api/api.js";
+import {} from "@/api/serviceAll.js";
 export default {
   data() {
     return {
@@ -55,7 +61,9 @@ export default {
   watch: {},
   mounted() {},
   methods: {
-    handelSelect(key, keyPath) {},
+    handelSelect(key, keyPath) {
+      console.log(keyPath);
+    },
     show() {},
     handleOpen(key, keyPath) {
       console.log(key, keyPath);

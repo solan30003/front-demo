@@ -13,9 +13,8 @@ import "./errorLog"; // error log
 import "./registerServiceWorker";
 
 function bootstrap(env) {
-
   Vue.use(Element);
-
+  console.log(env);
   Vue.config.productionTip = false;
   new Vue({
     el: "#app",
@@ -23,8 +22,6 @@ function bootstrap(env) {
     store,
     render: h => h(App)
   });
-
 }
 
 bootstrap(ENV || process.env);
-

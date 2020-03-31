@@ -5,10 +5,7 @@
 </template>
 
 <script>
-import gisMap from "./gis/map";
 export default {
-    components: {
-        gisMap
-    }
-}
+  components: {}
+};
 </script>
